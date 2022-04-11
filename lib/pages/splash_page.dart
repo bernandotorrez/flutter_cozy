@@ -14,36 +14,45 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 50),
-              Image.asset(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Image.asset(
                 'assets/images/logo.png',
                 height: 50,
               ),
-              const SizedBox(
-                height: 50,
-              ),
-              Text(
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Text(
                 'Find Cozy House\nto Stay and Happy',
                 style: kTitleTextStyle,
                 textAlign: TextAlign.left,
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              Text(
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Text(
                 'Stop membuang banyak waktu\npada tempat yang tidak habitable',
                 style: kSubtitleTextStyle,
                 textAlign: TextAlign.left,
               ),
-              const SizedBox(
-                height: 40,
-              ),
-              Container(
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Container(
                 height: 50,
                 width: 210,
                 child: TextButton(
@@ -57,16 +66,16 @@ class _SplashPageState extends State<SplashPage> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(17))),
                   onPressed: () {
-                    print('explore now');
+                    Navigator.pushNamed(context, '/home');
                   },
                   child: const Text(
                     'Explore Now',
                   ),
                 ),
               ),
-              Image.asset('assets/images/bottom.png', width: 501, height: 433)
-            ],
-          ),
+            ),
+            Image.asset('assets/images/bottom.png', width: 501, height: 433, fit: BoxFit.fill)
+          ],
         ),
       )),
     );
