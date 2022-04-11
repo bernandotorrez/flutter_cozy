@@ -7,3 +7,8 @@ TextStyle kTitleTextStyle =
     TextStyle(fontSize: 24, color: kBlackColor, fontWeight: FontWeight.w500);
 TextStyle kSubtitleTextStyle =
     TextStyle(fontSize: 16, color: kGreyColor, fontWeight: FontWeight.w300);
+TextStyle kButtonTextStyle = TextStyle(
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.w500
+);
