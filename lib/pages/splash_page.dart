@@ -17,22 +17,21 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 50),
             Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: const EdgeInsets.only(left: 30, top: 50),
               child: Image.asset(
                 'assets/images/logo.png',
                 height: 50,
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 30),
               child: Text(
                 'Find Cozy House\nto Stay and Happy',
-                style: kTitleTextStyle,
+                style: kBlackText.copyWith(fontSize: 24),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -43,7 +42,7 @@ class _SplashPageState extends State<SplashPage> {
               padding: const EdgeInsets.only(left: 30),
               child: Text(
                 'Stop membuang banyak waktu\npada tempat yang tidak habitable',
-                style: kSubtitleTextStyle,
+                style: kGreyText.copyWith(fontSize: 16),
                 textAlign: TextAlign.left,
               ),
             ),
@@ -59,7 +58,7 @@ class _SplashPageState extends State<SplashPage> {
                   style: TextButton.styleFrom(
                       backgroundColor: kPrimaryColor,
                       primary: Colors.white,
-                      textStyle: kButtonTextStyle,
+                      textStyle: kWhiteText.copyWith(fontSize: 18),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(17))),
                   onPressed: () {
@@ -71,7 +70,11 @@ class _SplashPageState extends State<SplashPage> {
                 ),
               ),
             ),
-            Image.asset('assets/images/bottom.png', width: 501, height: 433, fit: BoxFit.fill)
+            Align(
+              alignment: AlignmentDirectional.bottomCenter,
+              child: Image.asset('assets/images/bottom.png',
+                  width: 501, height: 433, fit: BoxFit.fill),
+            )
           ],
         ),
       )),
