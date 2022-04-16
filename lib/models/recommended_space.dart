@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class RecommendedSpace {
   int id;
   String imageUrl;

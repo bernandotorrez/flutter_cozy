@@ -11,7 +11,9 @@ class RecommendedSpaceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 24, bottom: 30),
+      padding: this.recommendedSpace.id != 3
+          ? const EdgeInsets.only(bottom: 30)
+          : const EdgeInsets.only(bottom: 0),
       child: Container(
         height: 110,
         width: 329,
@@ -31,33 +33,31 @@ class RecommendedSpaceCard extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.topRight,
-                      child: ClipRRect(
-                        borderRadius:
-                            BorderRadius.only(bottomLeft: Radius.circular(32)),
-                        child: Container(
-                          height: 30,
-                          width: 70,
-                          color: kPrimaryColor,
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 16),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Icon(
-                                      Icons.star,
-                                      size: 18,
-                                      color: kOrangeColor,
-                                    ),
-                                    Text(
-                                        this.recommendedSpace.score.toString() +
-                                            '/5',
-                                        style:
-                                            kWhiteText.copyWith(fontSize: 13)),
-                                  ],
-                                ),
+                      child: Container(
+                        height: 30,
+                        width: 70,
+                        decoration: BoxDecoration(
+                            color: kPrimaryColor,
+                            borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(32))),
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 16),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 18,
+                                    color: kOrangeColor,
+                                  ),
+                                  Text(
+                                      this.recommendedSpace.score.toString() +
+                                          '/5',
+                                      style: kWhiteText.copyWith(fontSize: 13)),
+                                ],
                               ),
                             ),
                           ),
